@@ -52,6 +52,13 @@ vim.keymap.set("n", "<M-j>", ":wincmd j<CR>", opts)
 vim.keymap.set("n", "<M-h>", ":wincmd h<CR>", opts)
 vim.keymap.set("n", "<M-l>", ":wincmd l<CR>", opts)
 
+-- Navigate between and out of terminals
+vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { buffer = 0 })
+vim.keymap.set("t", "<M-h>", [[<Cmd>wincmd h<CR>]], { buffer = 0 })
+vim.keymap.set("t", "<M-j>", [[<Cmd>wincmd j<CR>]], { buffer = 0 })
+vim.keymap.set("t", "<M-k>", [[<Cmd>wincmd k<CR>]], { buffer = 0 })
+vim.keymap.set("t", "<M-l>", [[<Cmd>wincmd l<CR>]], { buffer = 0 })
+
 -- Toggle line wrapping
 vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
 

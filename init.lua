@@ -25,5 +25,7 @@ require("lazy").setup({
 	require("plugins.none-ls"),
 	require("plugins.autocomplete"),
 	require("plugins.indent-blankline"),
+	require("plugins.lazygit"),
+	require("plugins.terminal"),
 	require("plugins.misc"),
 })

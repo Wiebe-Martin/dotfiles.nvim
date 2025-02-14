@@ -13,6 +13,21 @@ return {
 
 		-- Allows extra capabilities provided by nvim-cmp
 		"hrsh7th/cmp-nvim-lsp",
+
+		{
+			"jay-babu/mason-nvim-dap.nvim",
+			dependencies = "mason.nvim",
+			cmd = { "DapInstall", "DapUninstall" },
+			opts = {
+				automatic_installation = true,
+				handlers = {}, -- Can be extended for custom debugger configurations
+				ensure_installed = {
+					"python", -- Example debuggers, update as needed
+					"delve", -- Go debugger
+					"codelldb", -- C/C++/Rust
+				},
+			},
+		},
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -134,19 +149,19 @@ return {
 			--
 			-- But for many setups, the LSP (`tsserver`) will work just fine
 			ts_ls = {}, -- tsserver is deprecated
-			ruff = {},
 			pylsp = {
 				settings = {
 					pylsp = {
 						plugins = {
-							pyflakes = { enabled = false },
-							pycodestyle = { enabled = false },
+							pyflakes = { enabled = true },
+							pycodestyle = { enabled = true },
 							autopep8 = { enabled = false },
 							yapf = { enabled = false },
-							mccabe = { enabled = false },
-							pylsp_mypy = { enabled = false },
-							pylsp_black = { enabled = false },
-							pylsp_isort = { enabled = false },
+							mccabe = { enabled = true },
+							pylsp_mypy = { enabled = true },
+							pylsp_black = { enabled = true },
+							pylsp_isort = { enabled = true },
+							rope_autoimport = { enabled = true },
 						},
 					},
 				},

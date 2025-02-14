@@ -46,4 +46,23 @@ return {
 			vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle)
 		end,
 	},
+	{
+		"ThePrimeagen/vim-be-good",
+	},
+	{
+		"prichrd/netrw.nvim",
+		opts = {},
+	},
+	{
+		-- Markdown viewer
+		"ellisonleao/glow.nvim",
+		config = true,
+		cmd = "Glow",
+		setup = function()
+			require("glow").setup({
+				width_ratio = 1, -- maximum width of the Glow window compared to the nvim window size (overrides `width`)
+				height_ratio = 1,
+			})
+		end,
+	},
 }

@@ -13,11 +13,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	require("colorshemes.neomodern"),
 	require("plugins.tmux"),
 	require("plugins.treesiter"),
 	require("plugins.telescope"),
 	require("plugins.lualine"),
-	require("plugins.colortheme"),
 	require("plugins.gitsigns"),
 	require("plugins.harpoon"),
 	require("plugins.alpha"),
@@ -27,5 +27,9 @@ require("lazy").setup({
 	require("plugins.indent-blankline"),
 	require("plugins.lazygit"),
 	require("plugins.terminal"),
+	require("plugins.dap"),
+	require("plugins.noice"),
+	require("plugins.dap-ui"),
+	require("plugins.neotest"),
 	require("plugins.misc"),
 })

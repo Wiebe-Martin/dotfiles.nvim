@@ -2,7 +2,7 @@ return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
 	opts = {
-		open_mapping = [[<leader>t]],
+		open_mapping = [[<C-t>]],
 		start_in_insert = true,
 		insert_mappings = true,
 	},

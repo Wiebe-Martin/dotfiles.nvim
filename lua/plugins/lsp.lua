@@ -149,6 +149,14 @@ return {
 			--
 			-- But for many setups, the LSP (`tsserver`) will work just fine
 			ts_ls = {}, -- tsserver is deprecated
+			volar = {
+				filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+				init_options = {
+					vue = {
+						hybridMode = false, -- Disable hybrid mode (if you want Volar to handle everything)
+					},
+				},
+			},
 			pylsp = {
 				settings = {
 					pylsp = {
@@ -200,6 +208,15 @@ return {
 				},
 			},
 		}
+
+		require("lspconfig").volar.setup({
+			init_options = {
+				typescript = {
+					tsdk = vim.fn.stdpath("data")
+						.. "/mason/packages/typescript-language-server/node_modules/typescript/lib",
+				},
+			},
+		})
 
 		-- Ensure the servers and tools above are installed
 		--  To check the current status of installed tools and/or manually install

@@ -169,7 +169,13 @@ return {
 							pylsp_mypy = { enabled = true },
 							pylsp_black = { enabled = true },
 							pylsp_isort = { enabled = true },
-							rope_autoimport = { enabled = true },
+							rope_autoimport = {
+								enabled = true,
+								memory = true, -- use in-memory cache instead of writing to disk
+								fuzzy = false, -- disable fuzzy matching to speed things up
+								projectRoot = vim.fn.getcwd(), -- limit scope to the current working directory
+								maxFiles = 1000, -- limit the number of files scanned
+							},
 						},
 					},
 				},

@@ -26,7 +26,14 @@ return {
 		local sources = {
 			diagnostics.checkmake,
 			formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
-			formatting.stylua,
+			formatting.stylua.with({
+				extra_args = {
+					"--indent-type",
+					"Spaces",
+					"--indent-width",
+					"4",
+				},
+			}),
 			formatting.shfmt.with({ args = { "-i", "4" } }),
 			formatting.terraform_fmt,
 			formatting.black.with({ filetypes = { "python" } }),

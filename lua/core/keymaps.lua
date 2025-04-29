@@ -20,7 +20,12 @@ vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", opts)
 vim.keymap.set("n", "x", '"_x', opts)
 
 -- open file explorer
-vim.keymap.set("n", "<leader>mf", "<cmd> Ex <CR>", opts)
+vim.keymap.set(
+    "n",
+    "<leader>mf",
+    "<cmd> Lexplore <CR>",
+    { desc = "Open netrw file explorer", noremap = true, silent = true }
+)
 
 -- Vertical scroll and center
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)

@@ -8,7 +8,7 @@ return {
 		require("neomodern").setup({
 			-- MAIN OPTIONS --
 			-- Choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'
-			theme = "darkforest",
+			theme = "roseprime",
 			-- Keymap (in normal mode) to toggle between themes in theme list
 			cycle_theme_key = nil,
 			cycle_theme_list = { "iceclimber", "coffeecat", "darkforest", "roseprime" },

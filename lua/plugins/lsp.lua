@@ -224,6 +224,12 @@ return {
 			},
 		})
 
+		require("lspconfig").clangd.setup({
+			cmd = { "clangd" },
+			filetypes = { "c", "cpp", "objc", "objecpp" },
+			root_dir = require("lspconfig/util").root_pattern("compile_commands.json", "compile_flags.txt", ".git"),
+		})
+
 		-- Ensure the servers and tools above are installed
 		--  To check the current status of installed tools and/or manually install
 		--  other tools, you can run

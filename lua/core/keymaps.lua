@@ -57,6 +57,12 @@ vim.keymap.set("n", "<M-j>", ":wincmd j<CR>", opts)
 vim.keymap.set("n", "<M-h>", ":wincmd h<CR>", opts)
 vim.keymap.set("n", "<M-l>", ":wincmd l<CR>", opts)
 
+-- Decrease vertical split width
+vim.keymap.set("n", "<M-C-h>", ":vertical resize -5<CR>", { noremap = true, silent = true })
+
+-- Increase vertical split width
+vim.keymap.set("n", "<M-C-l>", ":vertical resize +5<CR>", { noremap = true, silent = true })
+
 -- Navigate between and out of terminals
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { buffer = 0 })
 vim.keymap.set("t", "<M-h>", [[<Cmd>wincmd h<CR>]], { buffer = 0 })
@@ -75,10 +81,13 @@ vim.keymap.set("v", ">", ">gv", opts)
 vim.keymap.set("v", "p", '"_dP', opts)
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+-- vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Format json
 vim.keymap.set("n", "<leader>fj", "<cmd> :%!jq '.'<CR>", { desc = "Format current json file" })
+
+-- tmux-sessionizer
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")

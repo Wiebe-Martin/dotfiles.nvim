@@ -6,7 +6,8 @@ return {
     opts = {
         picker = {},
         explorer = {},
-        man = {},
+        -- man = {},
+        -- indent = {},
     },
     keys = {
         -- Top Pickers & Explorer

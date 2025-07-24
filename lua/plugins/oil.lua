@@ -27,8 +27,21 @@ return {
         vim.keymap.set(
             "n",
             "<leader>mo",
-            require("oil").open,
+            -- require("oil").open,
+            -- function()
+            --     require("oil").open_float(".")
+            -- end,
+            "<cmd>Oil --preview --float <CR>",
             { desc = "Open oil.nvim file explorer", noremap = true, silent = true }
         )
+
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "OilActionsPost",
+            callback = function(event)
+                if event.data.actions.type == "move" then
+                    Snacks.rename.on_rename_file(event.data.actions.src_url, event.data.actions.dest_url)
+                end
+            end,
+        })
     end,
 }

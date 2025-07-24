@@ -13,14 +13,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- require("plugins.alpha"),
+    -- require("plugins.flash"),
     -- require("plugins.lazygit"),
+    -- require("plugins.telescope"),
     -- require("plugins.transparent"),
     require("colorshemes.nordic"),
-    -- require("plugins.alpha"),
     require("plugins.autocomplete"),
     require("plugins.dap"),
     require("plugins.dap-ui"),
-    -- require("plugins.flash"),
     require("plugins.gitsigns"),
     require("plugins.harpoon"),
     require("plugins.indent-blankline"),
@@ -33,7 +34,6 @@ require("lazy").setup({
     require("plugins.oil"),
     require("plugins.snacks"),
     require("plugins.snacks-dashboard"),
-    -- require("plugins.telescope"),
     require("plugins.terminal"),
     require("plugins.tmux"),
     require("plugins.treesiter"),
